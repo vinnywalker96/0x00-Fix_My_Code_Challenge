@@ -1,30 +1,38 @@
 #!/usr/bin/python3
-""" 
+"""
 User class
 """
 
+
 class User():
-    """ Documentation """
+    """
+    User class represents a user object.
+    """
 
     def __init__(self):
-        """ Documentation """
+        """
+        Initializes a User instance with None email.
+        """
         self.__email = None
-
-    @email.setter
-    def email(self, value):
-        """ Documentation """
-        if type(value) is not str:
-            raise TypeError("email must be a string")
-        self.__email = value
 
     @property
     def email(self):
-        """ Documentation """
+        """
+        Getter method for email property.
+        """
         return self.__email
-   
-    
-if __name__ == "__main__":
 
+    @email.setter
+    def email(self, value):
+        """
+        Setter method for email property.
+        """
+        if not isinstance(value, str):
+            raise TypeError("Email must be a string")
+        self.__email = value
+
+
+if __name__ == "__main__":
     u = User()
     u.email = "john@snow.com"
     print(u.email)
